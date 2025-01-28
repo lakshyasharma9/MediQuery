@@ -1,0 +1,203 @@
+/* src/components/Navbar/Navbar.css */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 0;
+    z-index: 1000;
+    padding-bottom: 200px;
+    background-image: url('/Home.jpg');
+    background-size: cover;         
+    background-position: center;    
+    background-repeat: no-repeat;  
+    width: 100%; 
+    background-blend-mode: multiply;
+    backdrop-filter: blur(40px);
+    background-color: #c7d2fe;
+  }
+  
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Logo */
+  .logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2563eb;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 0.95rem;
+    padding: 0.5rem;
+    transition: color 0.2s ease;
+    position: relative;
+  }
+  
+  .nav-link:hover {
+    color: #2563eb;
+  }
+  
+  .nav-link.active {
+    color: #2563eb;
+  }
+  
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 2px;
+    background-color: #2563eb;
+    border-radius: 2px;
+  }
+  
+  /* User Section */
+  .user-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .user-avatar {
+    width: 2.2rem;
+    height: 2.2rem;
+    background-color: #e0e7ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .user-avatar span {
+    color: #4f46e5;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .user-avatar:hover {
+    background-color: #c7d2fe;
+  }
+  
+  /* Menu Button (Mobile) */
+  .menu-button {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .menu-icon {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #4b5563;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-icon::before,
+  .menu-icon::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: #4b5563;
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-icon::before {
+    top: -8px;
+  }
+  
+  .menu-icon::after {
+    bottom: -8px;
+  }
+  
+  .menu-icon.open {
+    background-color: transparent;
+  }
+  
+  .menu-icon.open::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  
+  .menu-icon.open::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+  }
+  .upload-btn {
+    background: #2563eb;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  .upload-btn:hover {
+    background: #1d4ed8;
+  }
+  
+  @media (max-width: 768px) {
+    .upload-btn {
+      width: 100%;
+      text-align: center;
+      margin-top: 8px;
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .menu-button {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: #ffffff;
+      padding: 1rem;
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .nav-link {
+      width: 100%;
+      padding: 0.8rem 0;
+    }
+  
+    .nav-link.active::after {
+      display: none;
+    }
+  }
