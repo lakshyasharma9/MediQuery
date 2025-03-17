@@ -13,7 +13,7 @@ const Dashboard = () => {
     healthScore: 85,
     nextMedication: "2:30 PM",
     nextAppointment: "Mar 15",
-    
+
     // Recent Activity
     recentActivity: [
       { type: "Medication", time: "9:00 AM", description: "Blood Pressure Medicine" },
@@ -39,6 +39,12 @@ const Dashboard = () => {
       { day: 'Sun', temp: 98.6 }
     ],
 
+    // Stress Level Data (New)
+    stressLevel: {
+      current: 45,
+      status: "Moderate"
+    },
+
     // Symptom Tracking
     symptomData: [
       { name: 'Headache', frequency: 3, severity: 2 },
@@ -61,7 +67,6 @@ const Dashboard = () => {
     // Vital Signs
     vitalSigns: {
       oxygenLevel: 98,
-      heartRate: 72,
       respiratoryRate: 16,
       temperature: 98.6
     },
@@ -89,6 +94,13 @@ const Dashboard = () => {
     ]
   });
 
+  // Helper function for stress level color
+  const getStressLevelColor = (level) => {
+    if (level <= 30) return 'text-green';
+    if (level <= 70) return 'text-orange';
+    return 'text-red';
+  };
+
   return (
     <div className="dashboard">
       {/* Vital Signs Stats */}
@@ -100,9 +112,11 @@ const Dashboard = () => {
         </div>
         
         <div className="stat-card">
-          <h3>Heart Rate</h3>
-          <div className="stat-value text-red">{healthData.vitalSigns.heartRate}</div>
-          <div className="stat-label">BPM</div>
+          <h3>Stress Level</h3>
+          <div className={`stat-value ${getStressLevelColor(healthData.stressLevel.current)}`}>
+            {healthData.stressLevel.current}%
+          </div>
+          <div className="stat-label">{healthData.stressLevel.status}</div>
         </div>
 
         <div className="stat-card">

@@ -1,3 +1,4 @@
+/* src/components/HealthCard/HealthCard.css */
 .health-card-container {
   padding: 24px;
   max-width: 1200px;
@@ -226,6 +227,78 @@
   background: #dc2626;
 }
 
+/* Antibiotic Resistance Card Styles */
+.antibiotic-card {
+  grid-column: span 1;
+}
+
+.antibiotic-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.antibiotic-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.antibiotic-item:hover {
+  transform: translateX(4px);
+}
+
+.antibiotic-name {
+  font-size: 14px;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.resistance-status {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.resistance-status.resistant {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.resistance-status.sensitive {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.resistance-status.intermediate {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.view-report-btn {
+  width: 100%;
+  padding: 12px;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 8px;
+  color: #1e293b;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-report-btn:hover {
+  background: #e2e8f0;
+  transform: translateY(-2px);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .health-card-container {
@@ -303,5 +376,37 @@
   .allergy-tag {
     background: #450a0a;
     color: #fecaca;
+  }
+
+  .antibiotic-item {
+    background: #1e293b;
+  }
+
+  .antibiotic-name {
+    color: #f1f5f9;
+  }
+
+  .resistance-status.resistant {
+    background: #450a0a;
+    color: #fecaca;
+  }
+
+  .resistance-status.sensitive {
+    background: #14532d;
+    color: #bbf7d0;
+  }
+
+  .resistance-status.intermediate {
+    background: #451a03;
+    color: #fed7aa;
+  }
+
+  .view-report-btn {
+    background: #334155;
+    color: #f1f5f9;
+  }
+
+  .view-report-btn:hover {
+    background: #475569;
   }
 }

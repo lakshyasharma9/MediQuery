@@ -1,3 +1,4 @@
+// src/components/HealthCard/HealthCard.jsx
 import { useState } from 'react';
 import './HealthCard.css';
 
@@ -10,12 +11,18 @@ const HealthCard = () => {
     allergies: ["Penicillin", "Peanuts"],
     primaryDoctor: "Dr. Sarah Smith",
     insuranceNo: "INS-456789",
-    lastUpdated: "15 Jan 2024"
+    lastUpdated: "15 Jan 2024",
+    // Added antibiotic resistance data
+    antibioticResistance: [
+      { antibiotic: "Amoxicillin", status: "Resistant" },
+      { antibiotic: "Ciprofloxacin", status: "Sensitive" },
+      { antibiotic: "Azithromycin", status: "Intermediate" }
+    ]
   });
 
   return (
     <div className="health-card-container">
-      {/* Primary Card */}
+      {/* Primary Card - Same as before */}
       <div className="health-card">
         <div className="card-header">
           <div className="card-title">
@@ -23,7 +30,6 @@ const HealthCard = () => {
             <p className="card-subtitle">Universal Healthcare Access</p>
           </div>
           <div className="card-qr">
-            {/* Replacing QR Code with an Image */}
             <img src='/qrscan2.png' alt="QR Code" className="qr-image" />
             <div className="card-logo">MQ</div>
           </div>
@@ -83,6 +89,22 @@ const HealthCard = () => {
               <button className="action-btn">Download PDF</button>
               <button className="action-btn emergency">Emergency SOS</button>
             </div>
+          </div>
+
+          {/* New Antibiotic Resistance Card */}
+          <div className="info-card antibiotic-card">
+            <h3>Past Antibiotic Resistance & AST Report</h3>
+            <div className="antibiotic-list">
+              {userData.antibioticResistance.map((item, index) => (
+                <div key={index} className="antibiotic-item">
+                  <span className="antibiotic-name">{item.antibiotic}</span>
+                  <span className={`resistance-status ${item.status.toLowerCase()}`}>
+                    {item.status}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <button className="view-report-btn">View Full Report</button>
           </div>
         </div>
       </div>
