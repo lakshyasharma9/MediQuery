@@ -2,7 +2,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Dashboard from './components/Dashboard/Dashboard'
-import HealthCard from './components/HealthCard/HealthCard'
+import HealthCard from './components/Healthcard/HealthCard'
 import ChatInterface from './components/Chat/ChatInterface'
 import Timeline from './components/Timeline/Timeline'
 import HealthSchemes from './components/HealthSchemes/HealthSchemes'
